@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pin', function (Blueprint $table) {
-            $table->id('id_pin');
+        Schema::create('pins', function (Blueprint $table) {
+            $table->id('id');
             $table->unsignedBigInteger('id_kk');
             $table->string('alamat');
             $table->json('koordinat');
             $table->timestamps();
 
-            $table->foreign('id_kk')->references('id_kk')->on('kk');
+            $table->foreign('id_kk')->references('id')->on('kk');
         });
     }
 

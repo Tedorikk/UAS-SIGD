@@ -10,6 +10,12 @@ class Pin extends Model
 
     protected $fillable = [
         'alamat',
-        'koordinat'
+        'koordinat',
+        'id_kk'
     ];
+
+    public function kk()
+    {
+        return $this->belongsTo(KK::class, 'id_kk');
+    }
 }
